@@ -11,8 +11,6 @@ from sklearn.linear_model import Perceptron
 from sklearn.metrics import accuracy_score
 from matplotlib.colors import ListedColormap
 import matplotlib.pyplot as plt
-import matplotlib
-from distutils.version import LooseVersion
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.linear_model import SGDClassifier
@@ -340,7 +338,7 @@ class LogisticRegressionGD:
         """
         rgen = np.random.RandomState(self.random_state)
         self.w_ = rgen.normal(loc=0.0, scale=0.01, size=X.shape[1])
-        self.b_ = np.float_(0.)
+        self.b_ = np.float64(0.)
         self.losses_ = []
 
         for i in range(self.n_iter):
